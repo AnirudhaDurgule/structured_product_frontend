@@ -1,1 +1,0 @@
-# structured_product_frontend
