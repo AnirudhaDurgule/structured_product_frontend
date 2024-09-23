@@ -13,7 +13,7 @@ const SignUp = () => {
     const response = await signUpAPI({ email, fullname, password });
     if (response.status === 'success') {
       window.alert('Registration successful');
-      navigate('/signin'); // Redirect to sign-in page after successful registration
+      navigate('/signin');
     } else {
       window.alert('Registration failed');
     }

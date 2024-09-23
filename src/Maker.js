@@ -81,7 +81,6 @@ const Maker = () => {
         const sheets = wb.SheetNames;
         if (sheets && sheets.length) {
           const rows = utils.sheet_to_json(wb.Sheets[sheets[0]], { header: 1 });
-          // Handle imported data if necessary
         }
       } catch (error) {
         console.error('Error reading file:', error);
@@ -93,7 +92,7 @@ const Maker = () => {
   const uploadFileAPI = async (fileKey, file) => {
     const formData = new FormData();
     formData.append('file', file);
-    formData.append('user_id', localStorage.getItem('user_id')); // Append user_id from localStorage
+    formData.append('user_id', localStorage.getItem('user_id'));
 
     try {
       const token = localStorage.getItem('token');
@@ -132,7 +131,6 @@ const Maker = () => {
       return 'No File Uploaded Yet!!!';
       }
     } catch (error) {
-      // console.error('No data found for today:', error);
       return 'No data found for today';
     }
   };
@@ -238,12 +236,11 @@ const Maker = () => {
         }));
       }
       index = (index + 1) % keys.length;
-    }, 1000); // Poll every 1 second
+    }, 1000);
 
-    return () => clearInterval(interval); // Cleanup on unmount
+    return () => clearInterval(interval);
   }, [navigate, files]);
 
-  // Disable "Submit All" if all 4 files have status 'pending'
   const isSubmitAllDisabled = ['AlloteeMaster', 'ISINMaster', 'OptionMaster1', 'ProductSpecification'].every(
     (fileKey) => statuses[fileKey] === 'pending'
   );
@@ -256,7 +253,6 @@ const Maker = () => {
         <h1>Maker Page</h1>
         <h2>Upload Files</h2>
         <div className="forms-container">
-        {/* {isLoading && <div className="loader"></div>} */}
         {isLoading && <div className="loader">
     <div className="dot"></div>
     <div className="dot"></div>

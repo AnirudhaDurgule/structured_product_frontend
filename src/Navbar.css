@@ -1,7 +1,6 @@
 .navbar {
     display: flex;
-    justify-content: flex-end; 
-    /* justify-content: space-between; */
+    justify-content: flex-end;
     align-items: center;
     padding: 1rem;
     background-color: #333;
@@ -22,7 +21,7 @@
   }
   
   .logout-button {
-    padding: 0.5rem 1rem; /* Adjust padding as needed */
+    padding: 0.5rem 1rem;
     background-color: #ff4d4d;
     border: none;
     color: #fff;

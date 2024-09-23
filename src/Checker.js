@@ -50,7 +50,6 @@ const Checker = () => {
       }
       return 'No File Uploaded Yet!!!';
     } catch (error) {
-      // console.error('No data found for today:', error);
       return 'No data found for today';
     }
   };
@@ -184,7 +183,6 @@ const Checker = () => {
             <div key={fileKey} className={`file-button ${selectedFiles[fileKey] ? 'selected' : ''}`}>
               <button
                 onClick={() => handleDownload(`${fileKey}.xlsx`)}
-                // disabled={fileStatus[fileKey] === 'approved' || fileStatus[fileKey] === 'No File Uploaded Yet!!!'}
                 disabled={fileStatus[fileKey] === 'No File Uploaded Yet!!!'}
               >
                 Download {fileKey.replace(/([A-Z])/g, ' $1').trim()}.xlsx
